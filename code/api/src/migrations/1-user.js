@@ -1,3 +1,6 @@
+// This looks very similar to a migration in Rails and it seems like
+// we will want to do another one for a survey resource that belongs to a user
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {

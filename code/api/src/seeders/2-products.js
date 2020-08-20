@@ -1,3 +1,6 @@
+// We may want to add more seeds of products we could show the users
+// in the syle survey
+
 'use strict';
 
 const params = require('../config/params');
