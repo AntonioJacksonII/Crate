@@ -1,6 +1,6 @@
 'use strict'
 
-// User
+// User - This code defines the User model attributes and allowed data types for each attribute
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
     name: {
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-
+// This code creates a hasMany relationship between the User and Subscription objects (a User has many Subscriptions)
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }
