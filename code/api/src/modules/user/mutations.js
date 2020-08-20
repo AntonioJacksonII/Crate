@@ -1,7 +1,7 @@
 // Imports
 import { GraphQLString, GraphQLInt } from 'graphql'
 
-// App Imports
+// App Imports - This code imports the user types and create/remove resolvers
 import { UserType } from './types'
 import { create, remove } from './resolvers'
 
