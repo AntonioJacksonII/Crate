@@ -6,6 +6,7 @@ import * as user from '../../modules/user/mutations'
 import * as product from '../../modules/product/mutations'
 import * as crate from '../../modules/crate/mutations'
 import * as subscription from '../../modules/subscription/mutations'
+// Imports all of the mutations for the resources
 
 // Mutation
 const mutation = new GraphQLObjectType({
@@ -19,5 +20,5 @@ const mutation = new GraphQLObjectType({
     ...subscription
   }
 })
-
+// Defines and exports a single mutation depending on what was requested
 export default mutation
