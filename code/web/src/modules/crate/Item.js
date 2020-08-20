@@ -29,10 +29,13 @@ class Item extends PureComponent {
   }
 
   onClickSubscribe = (crateId) => {
+    // This is the function that will have the logic to check if the user already
+    // has a survey or not
     this.setState({
       isLoading: true
     })
-
+    // if the do have a style it will just run the same code as before, but if it
+    // does not, we will route to '/style-preferences' so they can take the survey
     this.props.messageShow('Subscribing, please wait...')
 
     this.props.create({ crateId })
