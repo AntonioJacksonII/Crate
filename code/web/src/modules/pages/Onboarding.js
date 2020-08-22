@@ -114,6 +114,8 @@ class Onboarding extends PureComponent {
         </GridCell>
       </Grid>
     ]
+    //could add an additional step that tells users to complete a style preference 
+    // not strictly necessary but probably better onboarding 
 
     return (
       <div>

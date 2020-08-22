@@ -33,6 +33,10 @@ class Item extends PureComponent {
       isLoading: true
     })
 
+    //should check with redux store to see if the user has completed a style survey
+    // if not, should reroute then
+    //if they have, can do the rest of this logic 
+
     this.props.messageShow('Subscribing, please wait...')
 
     this.props.create({ crateId })
@@ -89,6 +93,7 @@ class Item extends PureComponent {
     )
   }
 }
+
 
 // Component Properties
 Item.propTypes = {

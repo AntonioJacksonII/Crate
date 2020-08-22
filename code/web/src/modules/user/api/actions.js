@@ -117,3 +117,5 @@ export function getGenders() {
     }))
   }
 }
+
+// a separate action that will send the results of the style survey to an api (SEND_STYLE_SURVEY)
