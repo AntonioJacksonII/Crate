@@ -6,16 +6,15 @@ module.exports = function(sequelize, DataTypes) {
     userId: {
       type: DataTypes.INTEGER
     },
-    // A survey model would look the same up to this point, but would not have crateId
     crateId: {
       type: DataTypes.INTEGER
     }
+    // here we would have syleId rather than crateId
   })
-// I think the survey model will look very similar to this model,
-// it will probably only belong to a user though and will have a description
   Subscription.associate = function(models) {
     Subscription.belongsTo(models.User)
     Subscription.belongsTo(models.Crate)
+    // this would also be the same, but with Style rather than Crate
   }
 
   return Subscription

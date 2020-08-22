@@ -1,3 +1,7 @@
+// Our mutations for survey-preferences joins table would look very similar,
+// exept with styleId instead of crateId
+// And we woluld create a style model which would be very similar to the Crate model
+
 // Imports
 import { GraphQLInt } from 'graphql'
 

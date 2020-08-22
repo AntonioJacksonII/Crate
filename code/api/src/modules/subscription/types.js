@@ -6,6 +6,8 @@ import { UserType } from '../user/types'
 import CrateType from '../crate/types'
 
 // Subscription type
+// The only difference between the style survey type the subscription type is
+// that the crate field will be a style field
 const SubscriptionType = new GraphQLObjectType({
   name: 'subscription',
   description: 'Subscription Type',
