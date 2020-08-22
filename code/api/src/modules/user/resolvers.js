@@ -1,3 +1,5 @@
+// here we would add a resolver to update the style field in the user model
+
 // Imports
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'

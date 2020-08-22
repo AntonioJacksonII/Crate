@@ -1,3 +1,6 @@
+// we would add a mutation (addStyle) if we decide to save the style to the user
+// this would get called when the user submits a style survey
+
 // Imports
 import { GraphQLString, GraphQLInt } from 'graphql'
 
