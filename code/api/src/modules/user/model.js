@@ -15,10 +15,13 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.TEXT
     }
+    // We would add another field here if we are saving the survey results as as
+    // an attribute for users
   })
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)
+    // We would add a has many for stles if we are creating style as its own model
   }
 
   return User
