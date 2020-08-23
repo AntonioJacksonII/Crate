@@ -5,7 +5,7 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import { UserType } from './types'
 import { create, remove } from './resolvers'
 
-// Create
+// Create - This may be updated to set the style value to null at initial signup
 export const userSignup = {
   type: UserType,
   args: {

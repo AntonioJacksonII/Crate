@@ -7,7 +7,7 @@ import serverConfig from '../../config/server'
 import params from '../../config/params'
 import models from '../../setup/models'
 
-// Create
+// Create - This may be updated to set the style attribute to null
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
   const user = await models.User.findOne({ where: { email } })
