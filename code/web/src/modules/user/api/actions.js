@@ -12,7 +12,8 @@ export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 
-// Actions
+// Actions - A new action will be created here to set the styleSurveyCompleted to true or false depending on whether or not a user has completed a survey
+// A new Survey component will be created to display when the styleSurveyCompleted is false
 
 // Set a user after login or using localStorage token
 export function setUser(token, user) {
