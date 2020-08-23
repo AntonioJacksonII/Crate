@@ -1,3 +1,5 @@
+// A new migration will need to be completed to either add a style column to the users table or create new Style and stylePrefs tables
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
