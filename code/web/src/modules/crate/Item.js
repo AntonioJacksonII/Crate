@@ -17,7 +17,7 @@ import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
 
-// Component
+// Component - This is the component that displays when a user clicks subscribe on a crate
 class Item extends PureComponent {
 
   constructor(props) {
@@ -37,6 +37,7 @@ class Item extends PureComponent {
 
     this.props.create({ crateId })
       .then(response => {
+        // A new if will be added here to route to the survey page if the survey hasn't been completed
         if (response.data.errors && response.data.errors.length > 0) {
           this.props.messageShow(response.data.errors[0].message)
         } else {
