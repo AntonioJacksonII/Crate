@@ -9,6 +9,8 @@ const models = {
   Product: databaseConnection.import('../modules/product/model'),
   Crate: databaseConnection.import('../modules/crate/model'),
   Subscription: databaseConnection.import('../modules/subscription/model')
+  // If we decide to make a Style model, here we would import the style model and
+  // the stylePreferences joins table
 }
 
 Object.keys(models).forEach(modelName => {

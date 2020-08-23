@@ -18,6 +18,8 @@ const mutation = new GraphQLObjectType({
     ...product,
     ...crate,
     ...subscription
+    // If we decide to make a Style model, here we would include the style model and
+    // the stylePreferences joins table
   }
 })
 // Defines and exports a single mutation depending on what was requested

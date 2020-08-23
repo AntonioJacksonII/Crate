@@ -16,6 +16,7 @@ export default function (server) {
   server.use(serverConfig.graphql.endpoint, graphqlHTTP(request => ({
     schema,
     graphiql: serverConfig.graphql.ide,
+    // this is what gives us the graphql IDE that we can use to test queries and mutations
     pretty: serverConfig.graphql.pretty,
     context: {
       auth: {
