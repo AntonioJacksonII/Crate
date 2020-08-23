@@ -17,6 +17,7 @@ export async function get(parentValue, { id }) {
 // where we allow the user to view their survey from their profile
 export async function getByUser(parentValue, {}, { auth }) {
   if(auth.user && auth.user.id > 0) {
+    // It looks look we will need this access the user
     return await models.Subscription.findAll({
       where: {
         userId: auth.user.id

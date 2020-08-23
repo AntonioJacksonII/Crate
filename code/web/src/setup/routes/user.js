@@ -27,4 +27,6 @@ export default {
     component: Subscriptions,
     auth: true
   }
+
+  // add style/preferences route to the survey
 }

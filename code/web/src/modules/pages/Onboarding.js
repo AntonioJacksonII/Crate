@@ -114,6 +114,7 @@ class Onboarding extends PureComponent {
         </GridCell>
       </Grid>
     ]
+    // We could add a new step to fill out the survey
 
     return (
       <div>

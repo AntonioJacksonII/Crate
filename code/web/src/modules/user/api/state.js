@@ -42,6 +42,7 @@ export default (state = userInitialState, action) => {
         isAuthenticated: false,
         details: null
       }
+      // add a new case to update the survey to filled out and store the style preference
 
     default:
       return state

@@ -19,6 +19,7 @@ export default function (server) {
     // this is what gives us the graphql IDE that we can use to test queries and mutations
     pretty: serverConfig.graphql.pretty,
     context: {
+      // It looks like this might be the auth we are getting in out queries/mutations
       auth: {
         user: request.user,
         isAuthenticated: request.user && request.user.id > 0
