@@ -5,6 +5,7 @@ import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 import CrateType from './types'
 import { getAll, getById } from './resolvers'
 
+// Style may have similar queries
 // Crates All
 export const crates = {
   type: new GraphQLList(CrateType),

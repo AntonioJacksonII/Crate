@@ -5,6 +5,7 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import CrateType from './types'
 import { create, remove, update } from './resolvers'
 
+// Style will have similar mutations
 // Crate create
 export const crateCreate = {
   type: CrateType,
