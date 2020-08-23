@@ -64,6 +64,8 @@ export async function login(parentValue, { email, password }) {
 export async function getById(parentValue, { id }) {
   return await models.User.findOne({ where: { id } })
 }
+// we could use this function the find the user then call the update function that
+// we still need to create on that user
 
 // Get all
 export async function getAll() {
