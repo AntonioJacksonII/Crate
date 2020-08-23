@@ -5,6 +5,7 @@ import { GraphQLInt, GraphQLList } from 'graphql'
 import SubscriptionType from './types'
 import { getAll, getByUser, get } from './resolvers'
 
+// The stylePrefs model will have similar queries
 // Subscriptions All
 export const subscriptions = {
   type: new GraphQLList(SubscriptionType),

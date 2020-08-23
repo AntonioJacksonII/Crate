@@ -5,7 +5,7 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 import { UserType } from '../user/types' // This code imports the user type
 import CrateType from '../crate/types' // This code imports the crate type
 // We will probably need to import the user type in the style types.js file
-// Subscription type
+// Subscription type - stylePrefs will have similar fields - id, user, & style fields of GraphQLInt, UserType & StyleType
 const SubscriptionType = new GraphQLObjectType({
   name: 'subscription',
   description: 'Subscription Type',

@@ -5,6 +5,7 @@ import { GraphQLInt } from 'graphql'
 import SubscriptionType from './types'
 import { create, remove } from './resolvers'
 
+// The stylePrefs model will have similar mutations
 // Subscription create
 export const subscriptionCreate = {
   type: SubscriptionType,

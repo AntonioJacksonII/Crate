@@ -1,4 +1,4 @@
-// App Imports
+// App Imports - This code imports all of the different models
 import models from '../../setup/models'
 
 // Get subscription by ID
@@ -39,7 +39,7 @@ export async function getAll() {
   })
 }
 
-// Create subscription
+// Create subscription - We will probably need to have a similar create function for stylePrefs
 export async function create(parentValue, { crateId }, { auth }) {
   if(auth.user && auth.user.id > 0) {
     return await models.Subscription.create({
