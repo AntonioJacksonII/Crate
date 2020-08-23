@@ -4,7 +4,9 @@ import Signup from '../../modules/user/Signup'
 import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
 
-// User routes
+// A new route will need to be set for the survey that goes to user/style-preferences
+// User routes - these are the namespaced routes for the user
+
 export default {
   login: {
     path: '/user/login',
