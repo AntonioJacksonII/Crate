@@ -15,7 +15,7 @@ import { grey, grey2 } from '../../ui/common/colors'
 import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
 
-// Component
+// Component - This is the display page for a specific user's profile - this page might be updated to indicate a survey has been completed
 const Profile = (props) => (
   <div>
     {/* SEO */}
