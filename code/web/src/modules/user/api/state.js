@@ -8,9 +8,10 @@ export const userInitialState = {
   isLoading: false,
   isAuthenticated: false,
   details: null
+  // styleSurveyCompleted: False - from Redux - This is where whether or not the survey has completed will live. Will update to true when completed.
 }
 
-// State
+// State - Will add an additional case to add an additional state that is styleSurveyCompleted: true or false, depending on whether a survey has been completed
 export default (state = userInitialState, action) => {
   switch (action.type) {
     case SET_USER:
