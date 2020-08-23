@@ -1,4 +1,5 @@
 'use strict';
+// If we create a Style table, we will need to seed the styles that will be style options
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
