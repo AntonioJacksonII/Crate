@@ -3,6 +3,7 @@
 // User
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
+    // defines the users attributes and sequelize translates to SQL
     name: {
       type: DataTypes.STRING
     },

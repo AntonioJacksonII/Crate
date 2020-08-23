@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-        // I think Sequelize just translates to SQL 
+        // I think Sequelize just translates to SQL
       },
       name: {
         type: Sequelize.STRING
@@ -32,6 +32,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+      // This is what creates the user model in the DB, I am not sure If we can just
+      // edit this file if we want to add a field, or if we will need to create an
+      // entrirely new migration file to add a new field to an existing resource
     });
   },
   down: (queryInterface, Sequelize) => {

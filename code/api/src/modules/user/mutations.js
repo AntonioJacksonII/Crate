@@ -11,6 +11,7 @@ import { create, remove } from './resolvers'
 // Create
 export const userSignup = {
   type: UserType,
+  // defines the type expected to be recieved
   args: {
     name: {
       name: 'name',
@@ -26,8 +27,10 @@ export const userSignup = {
       name: 'password',
       type: GraphQLString
     }
+    // defines the agruments that the mutation is expecting
   },
   resolve: create
+  // references the resolver which is defined in resolvers.js
 }
 
 // Remove

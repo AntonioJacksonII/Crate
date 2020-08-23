@@ -21,5 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type: DataTypes.TEXT
     }
+    // We may decide that we want to add a style attribute to products as well
+    // in order to make the survey results easier to generate
   })
 }
