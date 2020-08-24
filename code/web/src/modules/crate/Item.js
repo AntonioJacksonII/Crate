@@ -33,9 +33,10 @@ class Item extends PureComponent {
       isLoading: true
     })
 
-    //should check with redux store to see if the user has completed a style survey
+    // should check with redux store to see if the user has completed a style survey
     // if not, should reroute then
-    //if they have, can do the rest of this logic 
+    // if they have, can do the rest of this logic 
+    // have to figure out how to re-route back to this exact line of code once survey is filled out
 
     this.props.messageShow('Subscribing, please wait...')
 

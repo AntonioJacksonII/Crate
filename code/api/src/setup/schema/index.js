@@ -11,4 +11,8 @@ const schema = new GraphQLSchema({
   mutation
 })
 
+// schema is defined here and all actions that can be done to all resources
+// it's how database constructs itself and prepares to take in data 
+// imports all queries and mutations
+
 export default schema

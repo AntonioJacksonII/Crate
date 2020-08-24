@@ -77,3 +77,5 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// add an update function that will determine which style preference "wins"

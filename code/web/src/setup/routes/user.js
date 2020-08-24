@@ -27,5 +27,6 @@ export default {
     component: Subscriptions,
     auth: true
   }
+  
   //add user/style-preferences route object for user
 }

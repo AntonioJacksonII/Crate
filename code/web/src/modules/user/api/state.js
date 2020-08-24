@@ -43,7 +43,7 @@ export default (state = userInitialState, action) => {
         details: null
       }
 
-      // add an additional case that updates the style survey to filled out and stores your style score 
+      // add an additional case that updates the style survey to filled out and stores your style preference as a string
 
     default:
       return state
