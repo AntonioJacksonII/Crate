@@ -76,7 +76,7 @@ export async function remove(parentValue, { id }) {
 // update
 // export async function update(parentValue, { id, style }) {
   // const user = await models.User.findOne({ where: { id } })
-//   return models.user.update({
+//   return user.update({
 //  style,
 //    })
 // }

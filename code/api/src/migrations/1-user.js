@@ -20,6 +20,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       // add style: type here... type: squelize.OBJECT?
+      // add style: type here... type: squelize.String?
 
       createdAt: {
         allowNull: false,
