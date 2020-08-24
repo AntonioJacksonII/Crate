@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       // add style: type here... type: squelize.OBJECT?
-    
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -35,3 +35,9 @@ module.exports = {
     return queryInterface.dropTable('users');
   }
 }
+// possible syntax for adding and attribute
+// queryInterface.addColumn(
+//   'nameOfAnExistingTable',
+//   'nameOfTheNewAttribute',
+//   Sequelize.STRING
+// )
