@@ -38,3 +38,16 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+// Update
+// add update const here userUpdate ={
+// port const userRemove = {
+//   type: UserType,
+//   args: {
+//     id: {
+//       name: 'style',
+//       type: GraphQLstring?
+//     }
+//   },
+//   resolve: update
+// }

@@ -73,6 +73,14 @@ export async function remove(parentValue, { id }) {
   return await models.User.destroy({ where: { id } })
 }
 
+// update
+// export async function update(parentValue, { id, style }) {
+  // const user = await models.User.findOne({ where: { id } })
+//   return models.user.update({
+//  style,
+//    })
+// }
+
 // User genders
 export async function getGenders() {
   return Object.values(params.user.gender)

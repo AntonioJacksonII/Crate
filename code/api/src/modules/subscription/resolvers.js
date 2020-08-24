@@ -28,6 +28,7 @@ export async function getByUser(parentValue, {}, { auth }) {
     throw new Error('Please login to view your subscriptions.')
   }
 }
+// how is this accessing auth?? Is this like rails current user?
 
 // Get all subscriptions
 export async function getAll() {
@@ -50,6 +51,7 @@ export async function create(parentValue, { crateId }, { auth }) {
     throw new Error('Please login to subscribe to this crate.')
   }
 }
+// We should mimic this creation for creating a survey
 
 // Delete subscription
 export async function remove(parentValue, { id }, { auth }) {

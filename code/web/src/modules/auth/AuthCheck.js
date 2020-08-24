@@ -24,5 +24,6 @@ function authCheckState(state) {
     user: state.user
   }
 }
+//  is this where the global user is created?
 
 export default connect(authCheckState, {})(AuthCheck)

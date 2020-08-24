@@ -51,6 +51,7 @@ class Onboarding extends PureComponent {
 
   render() {
     const steps = [
+      // add onboarding message for taking survey somewhere in here.
       /* 1. Welcome to Crate */
       <Grid alignCenter={true} style={{ height: '100%', textAlign: 'center', color: white }}>
         {/* Left - Headline and info */}

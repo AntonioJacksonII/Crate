@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.TEXT
     }
+    // add style: {type: Datatypes.OBJECT}
   })
 
   User.associate = function(models) {

@@ -24,6 +24,7 @@ export function setUser(token, user) {
 
   return { type: SET_USER, user }
 }
+// i believe this is where the user is set. so we should have access to user id as well as an easy way to access user.style for redirect.
 
 // Login a user using credentials
 export function login(userCredentials, isLoading = true) {

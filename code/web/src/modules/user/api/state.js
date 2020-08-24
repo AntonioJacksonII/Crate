@@ -9,7 +9,8 @@ export const userInitialState = {
   isAuthenticated: false,
   details: null
 }
-
+// below is where we will store the finish style_prefrence in the user state that
+// can then be sent out to the backend to be updated in the data base.
 // State
 export default (state = userInitialState, action) => {
   switch (action.type) {

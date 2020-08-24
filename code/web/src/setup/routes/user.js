@@ -26,5 +26,6 @@ export default {
     path: '/user/subscriptions',
     component: Subscriptions,
     auth: true
+    // route we will intercept. also does "auth:true mean it has user id saved?"
   }
 }

@@ -36,7 +36,7 @@ export default function (app) {
         store.dispatch(setUser(auth.token, auth.user))
       }
     }
-
+    // is this the user ^^^?
     // HTTP status code
     let status = 200
 

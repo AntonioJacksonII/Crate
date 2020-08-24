@@ -19,6 +19,8 @@ module.exports = {
       role: {
         type: Sequelize.TEXT
       },
+      // add style: type here... type: squelize.OBJECT?
+    
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

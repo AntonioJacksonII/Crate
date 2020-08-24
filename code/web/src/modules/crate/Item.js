@@ -27,7 +27,8 @@ class Item extends PureComponent {
       isLoading: false
     }
   }
-
+// this is where the user will click to subscribe and be redirected to survey
+// user will reroute if they have a user.style that is nil
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
