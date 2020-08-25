@@ -18,7 +18,13 @@ class StyleSurvey extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: null,
+      counter: {
+        classy: 0,
+        artsy: 0,
+        punk: 0,
+        sporty: 0,
+        natureesque: 0
+      },
     };
     console.log(this.props);
   }
@@ -38,10 +44,19 @@ class StyleSurvey extends Component {
         </p>
       </GridCell>
     </Grid>
+      <GridCell style={{ textAlign: 'center', backgroundColor: grey  }}>
+        <p style={{ marginBottom: '1em', color: grey2 }}>Like what you see?</p>
+      </GridCell>
+
+    <Grid>
+
+    </Grid>
       </section>
     );
   }
 }
+
+
 
 StyleSurvey.propTypes = {};
 
