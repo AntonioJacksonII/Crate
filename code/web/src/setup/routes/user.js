@@ -3,9 +3,7 @@ import Login from '../../modules/user/Login'
 import Signup from '../../modules/user/Signup'
 import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
-
-// A new route will need to be set for the survey that goes to user/style-preferences
-// User routes - these are the namespaced routes for the user
+import StyleSurvey from '../../modules/user/StyleSurvey'
 
 export default {
   login: {
@@ -27,6 +25,12 @@ export default {
   subscriptions: {
     path: '/user/subscriptions',
     component: Subscriptions,
+    auth: true
+  },
+
+  style: {
+    path: '/user/style-preferences',
+    component: StyleSurvey,
     auth: true
   }
 }
