@@ -23,7 +23,7 @@ describe('user queries', () => {
       .get('/')
       .send({ query: '{ users { email name } }'})
       .expect(200)
-    console.log(response.body)
+      
     expect(response.body.data.users.length).toEqual(2)
   })
 
