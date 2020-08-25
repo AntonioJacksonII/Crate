@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     role: {
       type: DataTypes.TEXT
+    },
+    style: {
+      type: DataTypes.STRING
     }
   })
 // This code creates a hasMany relationship between the User and Subscription objects (a User has many Subscriptions)
