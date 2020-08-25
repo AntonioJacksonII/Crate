@@ -23,18 +23,18 @@ describe('user queries', () => {
       .get('/')
       .send({ query: '{ users { email name } }'})
       .expect(200)
-
+    console.log(response.body)
     expect(response.body.data.users.length).toEqual(2)
   })
 
   it('returns user by id', async () => {
     const response = await request(server)
       .get('/')
-      .send({ query: '{ user(id: 2) { email name } }'})
+      .send({ query: '{ user(id: 4) { email name style } }'})
       .expect(200)
 
-    console.log(response.body.data)
     expect(response.body.data.user.name).toEqual('The User')
+    expect(response.body.data.user.style).toEqual('classy')
   })
 
   it('is true', () => {
