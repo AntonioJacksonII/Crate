@@ -23,7 +23,7 @@ describe('user queries', () => {
       .get('/')
       .send({ query: '{ users { email name } }'})
       .expect(200)
-      
+
     expect(response.body.data.users.length).toEqual(2)
   })
 
@@ -34,7 +34,7 @@ describe('user queries', () => {
       .expect(200)
 
     expect(response.body.data.user.name).toEqual('The User')
-    expect(response.body.data.user.style).toEqual('classy')
+    expect(response.body.data.user.style).toEqual('punk')
   })
 
   it('is true', () => {
