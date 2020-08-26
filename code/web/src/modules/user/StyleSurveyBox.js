@@ -24,7 +24,7 @@ class StyleSurveyBox extends PureComponent {
         artsy: 0,
         punk: 0,
         sporty: 0,
-        natureesque: 0,
+        nature: 0,
       },
     };
   }
@@ -43,13 +43,25 @@ class StyleSurveyBox extends PureComponent {
         question: "Choose your ideal living room.",
         images: [
           {
-            src: "https://unsplash.com/photos/kog39lmHguY",
-            value: "something else",
+            src: `${APP_URL}/images/stylesurvey/livingroom1.jpg`,
+            value: "artsy",
           },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
+          {
+            src: `${APP_URL}/images/stylesurvey/livingroom2.jpg`,
+            value: "punk",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/livingroom3.jpg`,
+            value: "sporty",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/livingroom4.jpg`,
+            value: "nature",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/livingroom5.jpg`,
+            value: "classy",
+          },
         ],
         button: "Next",
         function: this.nextStep,
@@ -58,11 +70,26 @@ class StyleSurveyBox extends PureComponent {
         category: "cafe",
         question: "Choose your ideal cafe.",
         images: [
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
+          {
+            src: `${APP_URL}/images/stylesurvey/cafe1.jpg`,
+            value: "punk",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/cafe2.jpg`,
+            value: "sporty",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/cafe3.jpg`,
+            value: "nature",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/cafe4.jpg`,
+            value: "artsy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/cafe5.jpg`,
+            value: "classy",
+          },
         ],
         button: "Next",
         function: this.nextStep,
@@ -71,7 +98,7 @@ class StyleSurveyBox extends PureComponent {
         category: "outdoor scene",
         question: "Choose your ideal outdoor scene.",
         images: [
-          { src: `something`, value: "something else" },
+          { src: `${APP_URL}/images/stylesurvey/b.jpg`, value: "something else" },
           { src: `something`, value: "something else" },
           { src: `something`, value: "something else" },
           { src: `something`, value: "something else" },
@@ -109,30 +136,66 @@ class StyleSurveyBox extends PureComponent {
     ];
 
     return (
-      <section className="style-survey-box">
+      <section
+        className="style-survey-box"
+        style={{ backgroundColor: "#f9f9f9" }}
+      >
         <H3 font="secondary">{questions[this.state.currentStep].question}</H3>
-        <section className="style-survey-images">
+        <section
+          className="style-survey-images"
+          style={{ display: "flex", flexDirection: "row" }}
+        >
           <img
+            style={{
+              height: "288px",
+              width: "231px",
+              objectFit: "cover",
+              margin: "1%",
+            }}
             src={questions[this.state.currentStep].images[0].src}
             value={questions[this.state.currentStep].images[0].value}
           />
 
           <img
+            style={{
+              height: "288px",
+              width: "231px",
+              objectFit: "cover",
+              margin: "1%",
+            }}
             src={questions[this.state.currentStep].images[1].src}
             value={questions[this.state.currentStep].images[1].value}
           />
 
           <img
+            style={{
+              height: "288px",
+              width: "231px",
+              objectFit: "cover",
+              margin: "1%",
+            }}
             src={questions[this.state.currentStep].images[2].src}
             value={questions[this.state.currentStep].images[2].value}
           />
 
           <img
+            style={{
+              height: "288px",
+              width: "231px",
+              objectFit: "cover",
+              margin: "1%",
+            }}
             src={questions[this.state.currentStep].images[3].src}
             value={questions[this.state.currentStep].images[3].value}
           />
 
           <img
+            style={{
+              height: "288px",
+              width: "231px",
+              objectFit: "cover",
+              margin: "1%",
+            }}
             src={questions[this.state.currentStep].images[4].src}
             value={questions[this.state.currentStep].images[4].value}
           />
