@@ -34,15 +34,17 @@ describe('user mutations', () => {
   })
 
   it('addStyleToUser', async () => {
-      const survey = { classy: 5, artsy: 2, punk: 7, sporty: 6, natureesque: 3 };
+      const survey = '{ classy: 5, artsy: 2, punk: 7, sporty: 6, natureesque: 3 }';
       const resp = await request(server)
         .get('/')
-        .send({ query: '{ userLogin(email: "user@crate.com", password: "123456", role: "USER") { user { name } } }' })
+        .send({ query: '{ userLogin(email: "user@crate.com", password: "123456", role: "USER") { user { id name } token } }' })
         .expect(200)
+
+      const id = resp.body.data.userLogin.user.id;
 
       const response = await request(server)
         .post('/')
-        .send({ query: `mutation { addStyleToUser(survey: ${survey}) { id name email style } }`})
+        .send({ query: `mutation { addStyleToUser(id: ${id}, surveyResults: "punk") { id name email style } }`})
         .expect(200)
 
         expect(response.body.data.addStyleToUser.style).toEqual('punk')
