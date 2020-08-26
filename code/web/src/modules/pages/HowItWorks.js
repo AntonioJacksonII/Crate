@@ -41,7 +41,7 @@ const HowItWorks = (props) => (
     <Grid>
       <GridCell
         style={{
-          background: `url('${APP_URL}/images/stock/how-it-works/4.jpeg') center top no-repeat`,
+          background: `url('${APP_URL}/images/stock/how-it-works/4.jpg') center top no-repeat`,
         }}
       />
 
