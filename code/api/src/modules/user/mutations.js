@@ -38,3 +38,9 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+// add style
+export const addStyleToUser = {
+  type: UserType,
+  args: {}
+}
