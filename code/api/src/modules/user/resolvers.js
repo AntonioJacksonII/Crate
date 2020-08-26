@@ -77,12 +77,3 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
-
-export async function updateStyle(parentValue, { id, surveyResults }) {
-  if(id) {
-    const user = await models.User.findOne({ where: { id } })
-    return await user.update({style: surveyResults})
-  } else {
-    throw new Error('Please login to update your style.')
-  }
-}
