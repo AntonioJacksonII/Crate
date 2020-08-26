@@ -19,24 +19,38 @@ class StyleSurveyBox extends PureComponent {
 
     this.state = {
       currentStep: 0,
-      counter: {
-        classy: 0,
-        artsy: 0,
-        punk: 0,
-        sporty: 0,
-        nature: 0,
-      },
+
+      classy: 0,
+      artsy: 0,
+      punk: 0,
+      sporty: 0,
+      nature: 0,
+
+      imageSelected: false,
     };
   }
 
   nextStep = () => {
     this.setState({
       currentStep: this.state.currentStep + 1,
+      imageSelected: false,
     });
+  };
+
+  updateCounter = (event) => {
+    console.log(event.target.className);
+    let styleName = this.state[event.target.className];
+    let className = event.target.className;
+    this.setState({
+      imageSelected: true,
+      [`${className}`]: styleName + 1 || 1,
+    });
+    // need to disable the other buttons
   };
 
   submitForm = () => {};
   render() {
+    console.log(this.state);
     const questions = [
       {
         category: "living room",
@@ -98,11 +112,26 @@ class StyleSurveyBox extends PureComponent {
         category: "outdoor scene",
         question: "Choose your ideal outdoor scene.",
         images: [
-          { src: `${APP_URL}/images/stylesurvey/b.jpg`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
+          {
+            src: `${APP_URL}/images/stylesurvey/outdoor1.jpg`,
+            value: "sporty",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/outdoor2.jpg`,
+            value: "nature",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/outdoor3.jpg`,
+            value: "classy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/outdoor4.jpg`,
+            value: "artsy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/outdoor5.jpg`,
+            value: "punk",
+          },
         ],
         button: "Next",
         function: this.nextStep,
@@ -111,11 +140,26 @@ class StyleSurveyBox extends PureComponent {
         category: "bedroom",
         question: "Choose your ideal bedroom.",
         images: [
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
+          {
+            src: `${APP_URL}/images/stylesurvey/bedroom1.jpg`,
+            value: "sporty",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/bedroom2.jpg`,
+            value: "nature",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/bedroom3.jpg`,
+            value: "artsy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/bedroom4.jpg`,
+            value: "classy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/bedroom5.jpg`,
+            value: "punk",
+          },
         ],
         button: "Next",
         function: this.nextStep,
@@ -124,11 +168,26 @@ class StyleSurveyBox extends PureComponent {
         category: "restaurant",
         question: "Choose your ideal restaurant.",
         images: [
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
-          { src: `something`, value: "something else" },
+          {
+            src: `${APP_URL}/images/stylesurvey/restaurant1.jpg`,
+            value: "classy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/restaurant2.jpg`,
+            value: "nature",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/restaurant3.jpg`,
+            value: "punk",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/restaurant4.jpg`,
+            value: "artsy",
+          },
+          {
+            src: `${APP_URL}/images/stylesurvey/restaurant5.jpg`,
+            value: "sporty",
+          },
         ],
         button: "Submit",
         function: this.submitForm,
@@ -153,7 +212,8 @@ class StyleSurveyBox extends PureComponent {
               margin: "1%",
             }}
             src={questions[this.state.currentStep].images[0].src}
-            value={questions[this.state.currentStep].images[0].value}
+            className={questions[this.state.currentStep].images[0].value}
+            onClick={!this.state.imageSelected ? this.updateCounter : null}
           />
 
           <img
@@ -164,7 +224,8 @@ class StyleSurveyBox extends PureComponent {
               margin: "1%",
             }}
             src={questions[this.state.currentStep].images[1].src}
-            value={questions[this.state.currentStep].images[1].value}
+            className={questions[this.state.currentStep].images[1].value}
+            onClick={!this.state.imageSelected ? this.updateCounter : null}
           />
 
           <img
@@ -175,7 +236,8 @@ class StyleSurveyBox extends PureComponent {
               margin: "1%",
             }}
             src={questions[this.state.currentStep].images[2].src}
-            value={questions[this.state.currentStep].images[2].value}
+            className={questions[this.state.currentStep].images[2].value}
+            onClick={!this.state.imageSelected ? this.updateCounter : null}
           />
 
           <img
@@ -186,7 +248,8 @@ class StyleSurveyBox extends PureComponent {
               margin: "1%",
             }}
             src={questions[this.state.currentStep].images[3].src}
-            value={questions[this.state.currentStep].images[3].value}
+            className={questions[this.state.currentStep].images[3].value}
+            onClick={!this.state.imageSelected ? this.updateCounter : null}
           />
 
           <img
@@ -197,7 +260,8 @@ class StyleSurveyBox extends PureComponent {
               margin: "1%",
             }}
             src={questions[this.state.currentStep].images[4].src}
-            value={questions[this.state.currentStep].images[4].value}
+            className={questions[this.state.currentStep].images[4].value}
+            onClick={!this.state.imageSelected ? this.updateCounter : null}
           />
         </section>
         <Button
