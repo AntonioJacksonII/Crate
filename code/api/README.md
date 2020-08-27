@@ -31,7 +31,7 @@ value: 'Bearer ${token}' where token is the user's authorization token
         "id": 6,  
         "name": "test",  
         "email": "test@test.com",  
-     "style": "classy"  
+        "style": "classy"  
       }  
    }  
 }
