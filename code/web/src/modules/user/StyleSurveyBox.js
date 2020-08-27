@@ -16,16 +16,13 @@ import userRoutes from "../../setup/routes/user";
 class StyleSurveyBox extends PureComponent {
   constructor(props) {
     super(props);
-
     this.state = {
       currentStep: 0,
-      style : {
-        classy: 0,
-        artsy: 0,
-        punk: 0,
-        sporty: 0,
-        nature: 0,
-      },
+      classy: 0,
+      artsy: 0,
+      punk: 0,
+      sporty: 0,
+      nature: 0,
       imageSelected: false,
     };
   }
@@ -48,14 +45,19 @@ class StyleSurveyBox extends PureComponent {
     // need to disable the other buttons
   };
 
-  submitForm = (e) => {
-    e.preventDefault();
+  submitForm = () => {
     // Turn state back into object we need to send
+    let counter = {}
+    for (let something in this.state) {
+      console.log(something)
+      if (something !== 'currentStep' && something !== 'imageSelected') {
+        counter[something] = this.state[something]
+      }
+    }
     // send obj in an array
-// props - new action to submit form will be passed down into Fn.
-// Once redux has updated state to completed survey, rerender will happen, and survey results will show, 
-// based on styleSurvey logic.
-
+    // props - new action to submit form will be passed down into Fn.
+    // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
+    // based on styleSurvey logic.
   };
 
   render() {
