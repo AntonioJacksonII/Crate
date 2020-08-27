@@ -2,6 +2,7 @@ import request from 'supertest'
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
 import schema from '../../setup/schema'
+import authentication from '../../setup/authentication'
 
 describe('user mutations', () => {
   let server;
@@ -9,13 +10,20 @@ describe('user mutations', () => {
   beforeAll(() => {
     server = express();
 
+    server.use(authentication)
+
     server.use(
       '/',
-      graphqlHTTP({
+      graphqlHTTP(request => ({
         schema: schema,
         graphiql: false,
-      })
-    )
+        context: {
+          auth: {
+            user: request.user,
+            isAuthenticated: request.user && request.user.id > 0
+          }
+        }
+      })))
   })
 
   it('userSignup', async () => {
@@ -34,17 +42,18 @@ describe('user mutations', () => {
   })
 
   it('addStyleToUser', async () => {
-      const survey = '[{"classy":5,"artsy":2,"punk":7,"sporty":6,"natureesque":3}]';
+      const survey = '[{"classy":5,"artsy":2,"punk":7,"sporty":6,"nature":3}]';
       const resp = await request(server)
         .get('/')
         .send({ query: '{ userLogin(email: "user@crate.com", password: "123456", role: "USER") { user { id name } token } }' })
         .expect(200)
 
-      const id = resp.body.data.userLogin.user.id;
+      const token = resp.body.data.userLogin.token;
 
       const response = await request(server)
         .post('/')
-        .send({ query: `mutation { addStyleToUser(id: ${id}, surveyResults: ${JSON.stringify(survey)}) { id name email style } }`})
+        .set('Authorization', `Bearer ${token}`)
+        .send({ query: `mutation { addStyleToUser(surveyResults: ${JSON.stringify(survey)}) { id name email style } }`})
         .expect(200)
 
         expect(response.body.data.addStyleToUser.style).toEqual('punk')

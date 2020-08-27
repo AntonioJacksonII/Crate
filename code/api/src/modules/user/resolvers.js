@@ -78,9 +78,9 @@ export async function getGenders() {
   return Object.values(params.user.gender)
 }
 
-export async function updateStyle(parentValue, { id, surveyResults }) {
-  const user = await models.User.findOne({ where: { id } })
-  if(user) {
+export async function updateStyle(parentValue, { surveyResults }, { auth }) {
+  if(auth.user && auth.user.id > 0) {
+    const user = await models.User.findOne({ where: { id: auth.user.id } })
     const results = JSON.parse(surveyResults)[0];
     const newStyle = Object.keys(results).sort((a, b) => results[b] - results[a])[0];
     return await user.update({style: newStyle})
