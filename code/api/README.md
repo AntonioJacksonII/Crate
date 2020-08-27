@@ -31,7 +31,7 @@ mutation { addStyleToUser(surveyResults: ${JSON.stringify(surveyObject)}) { id n
         "id": 6,  
         "name": "test",  
         "email": "test@test.com",  
-        "style": "classy"  
+     "style": "classy"  
       }  
    }  
 }
