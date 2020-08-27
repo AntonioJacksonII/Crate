@@ -19,13 +19,13 @@ class StyleSurveyBox extends PureComponent {
 
     this.state = {
       currentStep: 0,
-
-      classy: 0,
-      artsy: 0,
-      punk: 0,
-      sporty: 0,
-      nature: 0,
-
+      style : {
+        classy: 0,
+        artsy: 0,
+        punk: 0,
+        sporty: 0,
+        nature: 0,
+      },
       imageSelected: false,
     };
   }
@@ -48,7 +48,16 @@ class StyleSurveyBox extends PureComponent {
     // need to disable the other buttons
   };
 
-  submitForm = () => {};
+  submitForm = (e) => {
+    e.preventDefault();
+    // Turn state back into object we need to send
+    // send obj in an array
+// props - new action to submit form will be passed down into Fn.
+// Once redux has updated state to completed survey, rerender will happen, and survey results will show, 
+// based on styleSurvey logic.
+
+  };
+
   render() {
     console.log(this.state);
     const questions = [
