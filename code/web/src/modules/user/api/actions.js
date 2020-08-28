@@ -80,8 +80,8 @@ export function setStyle(surveyResults) {
       variables: surveyResults,
     }))
     .then = (response) => {
-      if(response.style ) {
-        style = response.style
+      if(response) {
+        style = response.data.addStyleToUser.style
         dispatch({
           type: SET_STYLE,
           style
