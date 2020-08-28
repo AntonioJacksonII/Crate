@@ -74,20 +74,24 @@ export function setStyle(surveyResults) {
   //     type: LOGIN_REQUEST,
   //     isLoading
   //   })
-  
     return axios.post(routeApi, mutation({
       operation:'addStyleToUser',
       variables: surveyResults,
     }))
-    .then = (response) => {
-      if(response) {
+    .then = (response => {
+      console.log(response);
+      console.log(response.data)
+      if(response.data) {
         style = response.data.addStyleToUser.style
-        dispatch({
+        return dispatch => {
+          dispatch({
           type: SET_STYLE,
           style
-        })
+          })
+        }
       }
-    }
+    })
+  .catch(error => console.log(error))
 
 }
 
