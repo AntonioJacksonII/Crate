@@ -2,6 +2,7 @@ import request from 'supertest'
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
 import schema from '../../setup/schema'
+import models from '../../setup/models'
 
 describe('user queries', () => {
   let server;
@@ -28,9 +29,10 @@ describe('user queries', () => {
   })
 
   it('returns user by id', async () => {
+    const user = await models.User.findOne({ where: { name: 'The User' } })
     const response = await request(server)
       .get('/')
-      .send({ query: '{ user(id: 4) { email name style } }'})
+      .send({ query: `{ user(id: ${user.id}) { email name style } }`})
       .expect(200)
 
     expect(response.body.data.user.name).toEqual('The User')
