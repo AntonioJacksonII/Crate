@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import {connect} from 'react-redux'
+import {setStyle} from './api/actions'
 
 // UI Imports
 import { Grid, GridCell } from "../../ui/grid";
@@ -48,20 +50,21 @@ class StyleSurveyBox extends PureComponent {
   submitForm = () => {
     // Turn state back into object we need to send
     let counter = {}
-    for (let something in this.state) {
-      console.log(something)
-      if (something !== 'currentStep' && something !== 'imageSelected') {
-        counter[something] = this.state[something]
+    for (let stateItem in this.state) {
+      if (stateItem !== 'currentStep' && stateItem !== 'imageSelected') {
+        counter[stateItem] = this.state[stateItem]
       }
     }
-    // send obj in an array
+    const thing = [counter]
+    this.props.setStyle(thing)
+    // redux function.props (thing)
     // props - new action to submit form will be passed down into Fn.
     // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
     // based on styleSurvey logic.
   };
 
   render() {
-    console.log(this.state);
+    console.log('props', this.props);
     const questions = [
       {
         category: "living room",
@@ -278,7 +281,7 @@ class StyleSurveyBox extends PureComponent {
         <Button
           theme="primary"
           style={{ marginTop: "1.5em" }}
-          onClick={questions[this.state.currentStep].function}
+          onClick={!this.state.imageSelected ? null: questions[this.state.currentStep].function}
         >
           {questions[this.state.currentStep].button}
         </Button>
@@ -289,4 +292,5 @@ class StyleSurveyBox extends PureComponent {
 
 StyleSurveyBox.propTypes = {};
 
-export default StyleSurveyBox;
+export default connect(null, {setStyle})(StyleSurveyBox)
+// export default connect(null, { register, messageShow, messageHide })(withRouter(Signup))
