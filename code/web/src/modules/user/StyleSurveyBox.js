@@ -55,8 +55,8 @@ class StyleSurveyBox extends PureComponent {
         counter[stateItem] = this.state[stateItem]
       }
     }
-    const thing = [counter]
-    this.props.setStyle(thing)
+    const userStyle = Object.keys(counter).sort((a,b) => counter[b] - counter[a])[0]
+    this.props.setStyle(userStyle)
     // redux function.props (thing)
     // props - new action to submit form will be passed down into Fn.
     // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
