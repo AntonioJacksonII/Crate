@@ -36,3 +36,16 @@ value: 'Bearer ${token}' where token is the user's authorization token
    }  
 }
 ```
+### Error Response (invalid authToken)
+```
+{
+  errors: [  
+      {  
+        message: 'Please login to update your style.',  
+          locations: [Array],  
+          path: [Array]  
+        }  
+      ],  
+      data: { addStyleToUser: null }  
+}  
+```
