@@ -72,7 +72,6 @@ describe('user mutations', () => {
 
         .send({ query: `mutation { addStyleToUser(surveyResults: ${JSON.stringify(survey)}) { id name email style } }`})
         .expect(200)
-
         expect(response.body.errors[0].message).toEqual('Please login to update your style.')
 
   })
