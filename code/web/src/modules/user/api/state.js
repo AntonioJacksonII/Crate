@@ -1,14 +1,14 @@
 // App Imports
 import { isEmpty } from '../../../setup/helpers'
-import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
+import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, SET_STYLE } from './actions'
 
 // Initial State
 export const userInitialState = {
   error: null,
   isLoading: false,
   isAuthenticated: false,
-  details: null
-  // styleSurveyCompleted: False - from Redux - This is where whether or not the survey has completed will live. Will update to true when completed.
+  details: null,
+  stylePreference: null
 }
 
 // State - Will add an additional case to add an additional state that is styleSurveyCompleted: true or false, depending on whether a survey has been completed
@@ -19,6 +19,12 @@ export default (state = userInitialState, action) => {
         ...state,
         isAuthenticated: !isEmpty(action.user),
         details: action.user,
+      }
+
+    case SET_STYLE:
+      return {
+        ...state,
+        stylePreference: action.style
       }
 
     case LOGIN_REQUEST:
