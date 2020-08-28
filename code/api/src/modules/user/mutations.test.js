@@ -58,4 +58,22 @@ describe('user mutations', () => {
 
         expect(response.body.data.addStyleToUser.style).toEqual('punk')
   })
+  it('addStyleToUser_sadpath', async () => {
+      const survey = '[{"classy":5,"artsy":2,"punk":7,"sporty":6,"nature":3}]';
+      const resp = await request(server)
+        .get('/')
+        .send({ query: '{ userLogin(email: "user@crate.com", password: "123456", role: "USER") { user { id name } token } }' })
+        .expect(200)
+
+      const token = resp.body.data.userLogin.token;
+
+      const response = await request(server)
+        .post('/')
+
+        .send({ query: `mutation { addStyleToUser(surveyResults: ${JSON.stringify(survey)}) { id name email style } }`})
+        .expect(200)
+
+        expect(response.body.errors[0].message).toEqual('Please login to update your style.')
+
+  })
 })
