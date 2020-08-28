@@ -11,6 +11,7 @@ export const LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST'
 export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
+export const SET_STYLE = 'AUTH/SET_STYLE'
 
 // Actions - A new action will be created here to set the styleSurveyCompleted to true or false depending on whether or not a user has completed a survey
 // A new Survey component will be created to display when the styleSurveyCompleted is false
@@ -66,6 +67,29 @@ export function login(userCredentials, isLoading = true) {
       })
   }
 }
+export function setStyle(surveyResults) {
+  let style = ''
+  // return dispatch => {
+  //   dispatch({
+  //     type: LOGIN_REQUEST,
+  //     isLoading
+  //   })
+  
+    return axios.post(routeApi, mutation({
+      operation:'addStyleToUser',
+      variables: surveyResults,
+    }))
+    .then = (response) => {
+      if(response.style ) {
+        style = response.style
+        dispatch({
+          type: SET_STYLE,
+          style
+        })
+      }
+    }
+
+}
 
 // Set user token and info in localStorage and cookie
 export function loginSetUserLocalStorageAndCookie(token, user) {
@@ -108,6 +132,7 @@ export function logoutUnsetUserLocalStorageAndCookie() {
   // Remove cookie
   cookie.remove('auth')
 }
+
 
 // Get user gender
 export function getGenders() {
