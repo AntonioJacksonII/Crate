@@ -33,11 +33,10 @@ class Item extends PureComponent {
   // otherwise, should just do the regular subscribe option
 
   checkStyle = (crateId) => {
-    if (this.props.style) {
-      console.log("filling out regular survey");
+    console.log(this.props.stylePreference);
+    if (this.props.stylePreference) {
       this.subscribe(crateId);
     } else {
-      console.log("redirecting");
       this.redirectToSurvey(crateId);
     }
   };
@@ -47,18 +46,14 @@ class Item extends PureComponent {
       .create({ crateId })
       .then((response) => {
         if (response.data.errors && response.data.errors.length > 0) {
-          // this.props.messageShow(response.data.errors[0].message);
           console.log(response.data.errors[0].message);
         } else {
-          // this.props.messageShow("Subscribed successfully.");
-
           this.props.history.push(userRoutes.style.path);
         }
       })
       .catch((error) => {
         console.log(error);
       });
-    <Redirect to="user/style-preferences" />;
   };
 
   subscribe = (crateId) => {
@@ -96,6 +91,7 @@ class Item extends PureComponent {
   };
 
   render() {
+    console.log(this.props);
     const { id, name, description } = this.props.crate;
     const { isLoading } = this.state;
 
@@ -153,7 +149,7 @@ Item.propTypes = {
 function itemState(state) {
   return {
     user: state.user,
-    stylePreference: state.stylePreference,
+    stylePreference: state.user.stylePreference,
   };
 }
 

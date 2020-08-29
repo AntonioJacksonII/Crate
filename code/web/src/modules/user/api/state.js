@@ -1,6 +1,12 @@
 // App Imports
-import { isEmpty } from '../../../setup/helpers'
-import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, SET_STYLE } from './actions'
+import { isEmpty } from "../../../setup/helpers";
+import {
+  SET_USER,
+  LOGIN_REQUEST,
+  LOGIN_RESPONSE,
+  LOGOUT,
+  SET_STYLE,
+} from "./actions";
 
 // Initial State
 export const userInitialState = {
@@ -8,8 +14,8 @@ export const userInitialState = {
   isLoading: false,
   isAuthenticated: false,
   details: null,
-  stylePreference: null
-}
+  stylePreference: null,
+};
 
 // State - Will add an additional case to add an additional state that is styleSurveyCompleted: true or false, depending on whether a survey has been completed
 export default (state = userInitialState, action) => {
@@ -19,27 +25,28 @@ export default (state = userInitialState, action) => {
         ...state,
         isAuthenticated: !isEmpty(action.user),
         details: action.user,
-      }
+      };
 
     case SET_STYLE:
+      console.log("action", action);
       return {
         ...state,
-        stylePreference: action.style
-      }
+        stylePreference: action.stylePreference,
+      };
 
     case LOGIN_REQUEST:
       return {
         ...state,
         error: null,
-        isLoading: action.isLoading
-      }
+        isLoading: action.isLoading,
+      };
 
     case LOGIN_RESPONSE:
       return {
         ...state,
         error: action.error,
-        isLoading: false
-      }
+        isLoading: false,
+      };
 
     case LOGOUT:
       return {
@@ -47,10 +54,10 @@ export default (state = userInitialState, action) => {
         error: null,
         isLoading: false,
         isAuthenticated: false,
-        details: null
-      }
+        details: null,
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
