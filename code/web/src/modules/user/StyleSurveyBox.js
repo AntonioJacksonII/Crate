@@ -61,6 +61,7 @@ class StyleSurveyBox extends PureComponent {
     // props - new action to submit form will be passed down into Fn.
     // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
     // based on styleSurvey logic.
+    // display page with style : You're classy!
   };
 
   render() {
