@@ -71,21 +71,7 @@ export function login(userCredentials, isLoading = true) {
   };
 }
 
-// export function createPosts(values, callback) {
-
-//   return dispatch => { //return function
-//     return axios.post(`${API}/posts`,values,{headers}) //return post request response
-//     .then((data) => { //pass data in as a parameter, call the callback, dispatch the action.
-//         callback();
-
-//       dispatch({
-//         type: CREATE_POST,
-//         payload: data
-//       })
-//     })
-//   }
-// }
-
+//set user style based on survey results
 export function setStyle(surveyResults) {
   let stylePreference = surveyResults;
   // return dispatch => {
@@ -104,14 +90,8 @@ export function setStyle(surveyResults) {
         })
       )
       .then((response) => {
-        // console.log('surveyResults', surveyResults)
-        console.log("response:", response);
-        // console.log("response.body:", response.body);
-        console.log("response.data", response.data.data.addStyleToUser.style);
         if (response.data.data.addStyleToUser.style) {
           stylePreference = response.data.data.addStyleToUser.style;
-          console.log("in if statement of axios post request for set style");
-          console.log("stylepref", stylePreference);
           return dispatch({
             type: SET_STYLE,
             stylePreference,
