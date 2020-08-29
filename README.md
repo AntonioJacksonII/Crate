@@ -9,6 +9,21 @@
 - Written in ES6+ using Babel + Webpack
 - Designed using Adobe Experience Design. Preview it [here](https://xd.adobe.com/view/a662a49f-57e7-4ffd-91bd-080b150b0317/).
 
+## Introduction
+This is a project augmented by 5 students at Turing School of Software and Design in the 4th module(of 4). The team consists of 2 front end students and 3 back end students.
+
+FE:  
+- [December Garnet-Smith](https://github.com/garnetred)
+- [Melissa VanKempen ](https://github.com/Melizzo)  
+  
+BE:  
+- [Antonio Jackson](https://github.com/AntonioJackson)
+- [Jack Cullen](https://github.com/jpc20)
+- [Max Mitrani](https://github.com/Lithnotep)  
+
+The scope of work for the 2 week project includes adding a style survey to determine the style preference of a user before they subscribe to a crate.
+For the front end students, this was their first time using Redux, axios, express, and GraphQL, and for the back end students this was this was their first time using JavaScript, Node.js, express, Sequelize, and GraphQL. This is also the first cross-pollination project for all students involved and an agile work-flow was used to ensure a high level of code-quality and communication. The project was tracked using Github Projects.
+
 
 ## Features
 - Modular and easily scalable code structure
@@ -21,7 +36,7 @@
 - File upload feature with GraphQL
 - React storybook demonstrating UI components for web
 - Server side rendering
-- Multi-package setup and dev scripts for an automated dev experiance
+- Multi-package setup and dev scripts for an automated dev experience  
 
 
 ## Useful for
@@ -36,6 +51,10 @@
 
 ## Screenshots and GIFs
 Click on image to view fullscreen and zoom
+
+### Style Survey
+[IMAGE](https://user-images.githubusercontent.com/59572865/91365685-f0eba900-e7be-11ea-9d4f-e09a6d330ff1.png)
+![Crate Survey](https://user-images.githubusercontent.com/59572865/91365685-f0eba900-e7be-11ea-9d4f-e09a6d330ff1.png)
 
 ### Desktop
 [IMAGE](https://github.com/atulmy/atulmy.github.io/blob/master/images/crate/desktop-all-with-link.png)
@@ -108,7 +127,7 @@ Click on image to view fullscreen and zoom
 - Setup
   - API: Install packages and database setup (migrations and seed) `cd api` and `npm run setup`
   - Webapp: Install packages `cd web` and `npm install`
-  - Mobile: 
+  - Mobile:
     1. Install packages `cd mobile` and `npm install`
     2. Install iOS dependencies `cd mobile/ios` `pod install`
 - Development
