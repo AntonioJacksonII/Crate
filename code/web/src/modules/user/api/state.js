@@ -28,7 +28,6 @@ export default (state = userInitialState, action) => {
       };
 
     case SET_STYLE:
-      console.log("action", action);
       return {
         ...state,
         stylePreference: action.stylePreference,

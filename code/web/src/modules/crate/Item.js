@@ -27,11 +27,6 @@ class Item extends PureComponent {
     };
   }
 
-  // need two separate functions
-  // one should check for stylePreference
-  // if there is no value for it, should do the logic that will redirect you
-  // otherwise, should just do the regular subscribe option
-
   checkStyle = (crateId) => {
     console.log(this.props.stylePreference);
     if (this.props.stylePreference) {
@@ -91,7 +86,6 @@ class Item extends PureComponent {
   };
 
   render() {
-    console.log(this.props);
     const { id, name, description } = this.props.crate;
     const { isLoading } = this.state;
 
