@@ -15,11 +15,6 @@ export const userInitialState = {
   isAuthenticated: false,
   details: null,
   stylePreference: null,
-  classy: 'this is a string about being really classy',
-  sporty: 'this is a string about being super sporty',
-  nature: 'this is a string about one with nature',
-  punk: 'this is a string about being a punk',
-
 };
 
 // State - Will add an additional case to add an additional state that is styleSurveyCompleted: true or false, depending on whether a survey has been completed
