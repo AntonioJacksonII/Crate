@@ -34,7 +34,7 @@ class StyleSurveyBox extends PureComponent {
       currentStep: this.state.currentStep + 1,
       imageSelected: false,
     });
-  };
+  }
 
   updateCounter = (event) => {
     console.log(event.target.className);
@@ -57,7 +57,6 @@ class StyleSurveyBox extends PureComponent {
     }
     const userStyle = Object.keys(counter).sort((a,b) => counter[b] - counter[a])[0]
     this.props.setStyle(userStyle)
-    // redux function.props (thing)
     // props - new action to submit form will be passed down into Fn.
     // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
     // based on styleSurvey logic.
@@ -66,6 +65,8 @@ class StyleSurveyBox extends PureComponent {
 
   render() {
     console.log('props', this.props);
+    console.log('StylePreference:', this.props.stylePreference);
+    // console.log('StylePreference:', stylePreference);
     const questions = [
       {
         category: "living room",
@@ -293,5 +294,11 @@ class StyleSurveyBox extends PureComponent {
 
 StyleSurveyBox.propTypes = {};
 
-export default connect(null, {setStyle})(StyleSurveyBox)
+function profileState(state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(profileState, {setStyle})(StyleSurveyBox)
 // export default connect(null, { register, messageShow, messageHide })(withRouter(Signup))
