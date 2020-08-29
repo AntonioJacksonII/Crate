@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import StyleSurveyBox from "./StyleSurveyBox";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 
 // UI Imports
 import { Grid, GridCell } from "../../ui/grid";
@@ -21,34 +21,47 @@ const StyleSurvey = (props) => {
       <Helmet>
         <title>My Style Preferences</title>
       </Helmet>
-      { !props.user.stylePreference ? (
-       <div>
-       <Grid style={{ backgroundColor: grey }}>
-         <GridCell style={{ padding: "2em", textAlign: "center" }}>
-           <H3 font="secondary">My Style Preferences</H3>
+      {!props.user.stylePreference ? (
+        <div>
+          <Grid style={{ backgroundColor: grey }}>
+            <GridCell style={{ padding: "2em", textAlign: "center" }}>
+              <H3 font="secondary">My Style Preferences</H3>
 
-           <p style={{ marginTop: "1em", color: grey2 }}>
-             Please complete the survey below.
-           </p>
-         </GridCell>
-       </Grid>
-       <GridCell style={{ textAlign: "center", backgroundColor: grey }}>
-         {/* <p style={{ marginBottom: '1em', color: grey2 }}>Like what you see?</p> */}
-         <StyleSurveyBox />
-       </GridCell>
-       </div>
-       ) : (
-        <Grid style={{ backgroundColor: grey }}>
-        <GridCell style={{ padding: "2em", textAlign: "center" }}>
-          <H3 font="secondary">My Style Preferences</H3>
-
-          <p style={{ marginTop: "1em", color: grey2 }}>
-            Your style is ${props.user.stylePreference}
-             {/* user.props.stylePreferneces and add profile state to bottom */}
-          </p>
-        </GridCell>
-      </Grid>
-       )}
+              <p style={{ marginTop: "1em", color: grey2 }}>
+                Please complete the survey below.
+              </p>
+            </GridCell>
+          </Grid>
+          <GridCell style={{ textAlign: "center", backgroundColor: grey }}>
+            {/* <p style={{ marginBottom: '1em', color: grey2 }}>Like what you see?</p> */}
+            <StyleSurveyBox />
+          </GridCell>
+        </div>
+      ) : (
+        <div>
+          <Grid style={{ backgroundColor: grey }}>
+            <GridCell style={{ padding: "2em", textAlign: "center" }}>
+              <H3 font="secondary">My Style Preferences</H3>
+            </GridCell>
+            <GridCell style={{ textAlign: "center", backgroundColor: grey }}>
+              <section
+                className="style-survey-box"
+                style={{ backgroundColor: "#f9f9f9" }}
+              >
+                <h3 style={{ marginTop: "1em", color: grey3 }}>
+                  Your style is:
+                  <br></br>
+                  ~ {props.user.stylePreference} ~
+                </h3>
+                <h3>Having a {props.user.stylePreference} style means
+                  you have a positive outlook on life and are excited
+                  to be graduating from Turing in 4 weeks!
+                </h3>
+              </section>
+            </GridCell>
+          </Grid>
+        </div>
+      )}
 
       <Grid></Grid>
     </section>
@@ -59,9 +72,9 @@ StyleSurvey.propTypes = {};
 
 function profileState(state) {
   return {
-    user: state.user
-  }
+    user: state.user,
+  };
 }
 
-export default connect(profileState, null)(StyleSurvey)
+export default connect(profileState, null)(StyleSurvey);
 // export default StyleSurvey;
