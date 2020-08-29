@@ -37,7 +37,6 @@ class StyleSurveyBox extends PureComponent {
   };
 
   updateCounter = (event) => {
-    console.log(event.target.className);
     let styleName = this.state[event.target.className];
     let className = event.target.className;
     this.setState({
