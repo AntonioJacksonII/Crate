@@ -83,6 +83,7 @@ export async function updateStyle(parentValue, { surveyResults }, { auth }) {
     const user = await models.User.findOne({ where: { id: auth.user.id } })
     // const results = JSON.parse(surveyResults)[0];
     // const newStyle = Object.keys(results).sort((a, b) => results[b] - results[a])[0];
+    console.log(user);
     return await user.update({style: surveyResults})
   } else {
     throw new Error('Please login to update your style.')

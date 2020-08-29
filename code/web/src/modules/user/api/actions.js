@@ -53,7 +53,6 @@ export function login(userCredentials, isLoading = true) {
 
           loginSetUserLocalStorageAndCookie(token, user)
         }
-
         dispatch({
           type: LOGIN_RESPONSE,
           error
@@ -68,31 +67,28 @@ export function login(userCredentials, isLoading = true) {
   }
 }
 export function setStyle(surveyResults) {
-  let style = ''
+  let style = surveyResults
   // return dispatch => {
   //   dispatch({
   //     type: LOGIN_REQUEST,
-  //     isLoading
+  //     style: null
   //   })
-    return axios.post(routeApi, mutation({
+     axios.post(routeApi, mutation({
       operation:'addStyleToUser',
-      variables: surveyResults,
+      variables: {surveyResults},
+      fields: ['id', 'name', 'email', 'style']
     }))
-    .then = (response => {
-      console.log(response);
-      console.log(response.data)
-      if(response.data) {
-        style = response.data.addStyleToUser.style
-        return dispatch => {
-          dispatch({
+    .then(response => {
+      // console.log('surveyResults', surveyResults)
+      // console.log('response:', response)
+      // console.log('response.body:', response.body);
+      // console.log('response.body.data', response.body.data )
+     return {
           type: SET_STYLE,
           style
-          })
         }
-      }
     })
-  .catch(error => console.log(error))
-
+    .catch(error => console.log(error))
 }
 
 // Set user token and info in localStorage and cookie
