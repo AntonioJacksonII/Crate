@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import StyleSurveyBox from "./StyleSurveyBox";
+import {connect} from 'react-redux'
 
 // UI Imports
 import { Grid, GridCell } from "../../ui/grid";
@@ -14,25 +15,40 @@ import { white, grey, grey2, grey3 } from "../../ui/common/colors";
 import { APP_URL } from "../../setup/config/env";
 import userRoutes from "../../setup/routes/user";
 
-const StyleSurvey = () => {
+const StyleSurvey = (props) => {
   return (
     <section>
       <Helmet>
         <title>My Style Preferences</title>
       </Helmet>
-      <Grid style={{ backgroundColor: grey }}>
+      { !props.user.stylePreference ? (
+       <div>
+       <Grid style={{ backgroundColor: grey }}>
+         <GridCell style={{ padding: "2em", textAlign: "center" }}>
+           <H3 font="secondary">My Style Preferences</H3>
+
+           <p style={{ marginTop: "1em", color: grey2 }}>
+             Please complete the survey below.
+           </p>
+         </GridCell>
+       </Grid>
+       <GridCell style={{ textAlign: "center", backgroundColor: grey }}>
+         {/* <p style={{ marginBottom: '1em', color: grey2 }}>Like what you see?</p> */}
+         <StyleSurveyBox />
+       </GridCell>
+       </div>
+       ) : (
+        <Grid style={{ backgroundColor: grey }}>
         <GridCell style={{ padding: "2em", textAlign: "center" }}>
           <H3 font="secondary">My Style Preferences</H3>
 
           <p style={{ marginTop: "1em", color: grey2 }}>
-            Please complete the survey below.
+            Your style is ${props.user.stylePreference}
+             {/* user.props.stylePreferneces and add profile state to bottom */}
           </p>
         </GridCell>
       </Grid>
-      <GridCell style={{ textAlign: "center", backgroundColor: grey }}>
-        {/* <p style={{ marginBottom: '1em', color: grey2 }}>Like what you see?</p> */}
-        <StyleSurveyBox />
-      </GridCell>
+       )}
 
       <Grid></Grid>
     </section>
@@ -41,4 +57,11 @@ const StyleSurvey = () => {
 
 StyleSurvey.propTypes = {};
 
-export default StyleSurvey;
+function profileState(state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(profileState, null)(StyleSurvey)
+// export default StyleSurvey;

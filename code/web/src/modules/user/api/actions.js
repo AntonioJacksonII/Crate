@@ -74,11 +74,6 @@ export function login(userCredentials, isLoading = true) {
 //set user style based on survey results
 export function setStyle(surveyResults) {
   let stylePreference = surveyResults;
-  // return dispatch => {
-  //   dispatch({
-  //     type: LOGIN_REQUEST,
-  //     style: null
-  //   })
   return (dispatch) => {
     return axios
       .post(
