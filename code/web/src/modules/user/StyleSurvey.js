@@ -97,4 +97,3 @@ function profileState(state) {
 }
 
 export default connect(profileState, null)(StyleSurvey);
-// export default StyleSurvey;
