@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import {connect} from 'react-redux'
-import {setStyle} from './api/actions'
+import { connect } from "react-redux";
+import { setStyle } from "./api/actions";
 
 // UI Imports
 import { Grid, GridCell } from "../../ui/grid";
@@ -34,7 +34,7 @@ class StyleSurveyBox extends PureComponent {
       currentStep: this.state.currentStep + 1,
       imageSelected: false,
     });
-  }
+  };
 
   updateCounter = (event) => {
     console.log(event.target.className);
@@ -48,25 +48,19 @@ class StyleSurveyBox extends PureComponent {
   };
 
   submitForm = () => {
-    // Turn state back into object we need to send
-    let counter = {}
+    let counter = {};
     for (let stateItem in this.state) {
-      if (stateItem !== 'currentStep' && stateItem !== 'imageSelected') {
-        counter[stateItem] = this.state[stateItem]
+      if (stateItem !== "currentStep" && stateItem !== "imageSelected") {
+        counter[stateItem] = this.state[stateItem];
       }
     }
-    const userStyle = Object.keys(counter).sort((a,b) => counter[b] - counter[a])[0]
-    this.props.setStyle(userStyle)
-    // props - new action to submit form will be passed down into Fn.
-    // Once redux has updated state to completed survey, rerender will happen, and survey results will show,
-    // based on styleSurvey logic.
-    // display page with style : You're classy!
+    const userStyle = Object.keys(counter).sort(
+      (a, b) => counter[b] - counter[a]
+    )[0];
+    this.props.setStyle(userStyle);
   };
 
   render() {
-    console.log('props', this.props);
-    console.log('StylePreference:', this.props.stylePreference);
-    // console.log('StylePreference:', stylePreference);
     const questions = [
       {
         category: "living room",
@@ -209,7 +203,6 @@ class StyleSurveyBox extends PureComponent {
         function: this.submitForm,
       },
     ];
-
     return (
       <section
         className="style-survey-box"
@@ -283,7 +276,11 @@ class StyleSurveyBox extends PureComponent {
         <Button
           theme="primary"
           style={{ marginTop: "1.5em" }}
-          onClick={!this.state.imageSelected ? null: questions[this.state.currentStep].function}
+          onClick={
+            !this.state.imageSelected
+              ? null
+              : questions[this.state.currentStep].function
+          }
         >
           {questions[this.state.currentStep].button}
         </Button>
@@ -296,9 +293,9 @@ StyleSurveyBox.propTypes = {};
 
 function profileState(state) {
   return {
-    user: state.user
-  }
+    user: state.user,
+  };
 }
 
-export default connect(profileState, {setStyle})(StyleSurveyBox)
-// export default connect(null, { register, messageShow, messageHide })(withRouter(Signup))
+export default connect(profileState, { setStyle })(StyleSurveyBox);
+
