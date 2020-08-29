@@ -10,10 +10,11 @@
 - Designed using Adobe Experience Design. Preview it [here](https://xd.adobe.com/view/a662a49f-57e7-4ffd-91bd-080b150b0317/).
 
 ## Introduction
-This is a project augmented by 5 students at Turing School of Software and Design in the 4th module(of 4). The team consists of 2 front end students:
+This is a project augmented by 5 students at Turing School of Software and Design in the 4th module(of 4). The team consists of 2 front end students and 3 back end students.  
+FE:  
 - [December Garnet-Smith](https://github.com/garnetred)
 - [Melissa VanKempen ](https://github.com/Melizzo)  
-and 3 back end students:
+BE:  
 - [Antonio Jackson](https://github.com/AntonioJackson)
 - [Jack Cullen](https://github.com/jpc20)
 - [Max Mitrani](https://github.com/Lithnotep)  
