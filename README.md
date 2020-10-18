@@ -17,7 +17,7 @@ FE:
 - [Melissa VanKempen ](https://github.com/Melizzo)  
   
 BE:  
-- [Antonio Jackson](https://github.com/AntonioJackson)
+- [Antonio Jackson](https://github.com/AntonioJacksonII)
 - [Jack Cullen](https://github.com/jpc20)
 - [Max Mitrani](https://github.com/Lithnotep)  
 
